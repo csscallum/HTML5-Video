@@ -1,22 +1,30 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>HTML5 Video Embed with Flash Fallback</title>
+		<meta charset="utf-8">
+		<title>Responsive HTML5 Video Embed with Flash Fallback</title>
+		<style type="text/css">
+			/*Max resolution: 1920x1200*/
+			html, body { height: 100%; font-size: 100%; margin: 0; padding: 0; }
+			body { background: #000; font-weight: normal; font-style: normal; line-height: 1.4; position: relative; cursor: default; }
+			.videoContainer { position: absolute; height: 100%; max-height: 1200px; width: 100%; overflow: hidden; }
+			.videoContainer video {	width: 100%; height: auto; max-height: 100%; max-width: 1920px; margin: 0 auto; display: block; }
+		</style>
 </head>
 <body>
-
-<video controls width="560" height="320">
-    <source src="video/mp4/demo.mp4" type="video/mp4">
-    <source src="video/webm/demo.webm" type="video/webm">
-    <object type="application/x-shockwave-flash" data="video/player.swf" width="560" height="320">
-        <param name="allowfullscreen" value="true">
-        <param name="allowscriptaccess" value="always">
-        <param name="flashvars" value="file=video/mp4/demo.mp4">
-        <!--[if IE]><param name="movie" value="video/player.swf"><![endif]-->
-        <p>Your browser can't play HTML5 video. <a href="video/webm/demo.webm"> Download it</a> instead.</p>
-    </object>
-</video>
+<div class="videoContainer">
+	<video controls autoplay>
+		<source src="video/mp4/demo.mp4" type="video/mp4">
+		<source src="video/webm/demo.webm" type="video/webm">
+		<object type="application/x-shockwave-flash" data="video/player.swf" width="560" height="350">
+			<param name="allowfullscreen" value="true">
+			<param name="allowscriptaccess" value="always">
+			<param name="flashvars" value="file=video/mp4/demo.mp4">
+			<!--[if IE]><param name="movie" value="video/player.swf"><![endif]-->
+			<p>Your browser can't play HTML5 video. <a href="video/webm/demo.mp4">Download it</a> instead.</p>
+		</object>
+	</video>
+</div>
 
 </body>
 </html>
